@@ -1,0 +1,274 @@
+@media (max-width: 1220px) {
+    /* Estilos responsive para Login */
+    .banner__logo {
+        padding: 0;
+        max-width: 10rem;
+        transform: scale(0.9);
+    }
+    .container-content {
+        flex-basis: 40%;
+        height: 27rem;
+    }
+    .container-login {
+        flex-basis: 40%;
+        height: 25rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Estilos responsive para Login */
+    .banner__logo {
+        max-width: 7rem;
+    }
+    .container-content {
+        flex-basis: 37%;
+        height: 27rem;
+    }
+    .container-login {
+        flex-basis: 37%;
+        height: 25rem;
+    }
+    .login {
+        width: auto;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 970px) {
+    /* Estilos responsive para Login */
+    .panel-login {
+        position: fixed;
+    }
+    .logos-figure {
+        flex-wrap: nowrap;
+    }
+    .banner__logo {
+        max-width: 8rem;
+        margin: .1rem 0 0;
+    }
+    .title-form {
+        font-size: 1.7rem;
+    }
+}
+@media (max-width: 880px) {
+    /* Estilos responsive para Login */
+    .logos-figure {
+        flex-wrap: wrap;
+    }
+    .container-content {
+        flex-basis: 33%;
+        height: 27rem;
+    }
+    .container-login {
+        flex-basis: 33%;
+        height: 25rem;
+    }
+}
+
+@media (max-width: 660px) {
+    /* Estilos responsive para Login */
+    .logos-figure {
+        margin: 0;
+    }
+    .container-content,
+    .container-login {
+        flex-basis: 27%;
+    }
+    .title-form {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 540px) {
+    /* Estilos responsive para Login */
+    .banner__logo {
+        max-width: 7rem;
+    }
+    .container-content,
+    .container-login {
+        flex-basis: 25%;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Estilos responsive para Login */
+    .container-content {display: none;}
+    .container-login--colums {
+        flex-direction: column;
+    }
+    .banner__logo {
+        max-width: 6rem;
+    }
+    .container-login {
+        flex-basis: 100%;
+        width: 21rem;
+        border-radius: 1rem;
+    }
+}
+@media (max-width: 440px) {
+    /* Estilos responsive para Login */
+    .container-login {
+        width: 70%;
+    }
+}
+
+@media (max-width: 360px) {
+    /* Estilos responsive para Login */
+    .container-login {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1110px) {
+    /* Estilos responsive para Menu y adaptabilidad de los 3 componentes*/
+    .menu-container {
+        width: 30%;
+        height: auto;
+        box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.5);
+        z-index: 2;
+    }
+
+    .banner {
+        width: 69%;
+    }
+    /* .container { OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+    .container {
+        width: 100%;
+    }
+    .banner__nav {
+        width: 92%;
+    }
+    .txt_noti {
+        font-size: .9rem;
+    }
+    .contenedor__notificaciones {
+        max-width: 30%;
+    }
+}
+@media (max-width: 900px) {
+    /* Estilos responsive para Menu y adaptabilidad de los 3 componentes*/
+    .menu-container {
+        width: 40%;
+    }
+    .banner {
+        width: 59%;
+    }
+    .txt_noti {
+        font-size: .8rem;
+    }
+    .contenedor__notificaciones {
+        max-width: 37%;
+    }
+}
+@media (max-width: 760px) {
+    /* Estilos responsive para Menu y adaptabilidad de los 3 componentes*/
+    .banner {
+        width: 68%;
+    }
+    .title_fuec {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+@media (max-width: 720px) {
+    /* Estilos responsive para Menu y adaptabilidad de los 3 componentes*/
+    .menu-container {
+        width: 17rem;
+    }
+    .banner__menu-hamburgesa {
+        left: 19rem;
+        scale: 1.4;
+    }
+    .menu-open .banner__menu-hamburgesa {
+        left: 1.7rem;
+        top: 1rem;
+        scale: 1.4;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .banner {
+        width: 100%;
+    }
+    .banner__nav {
+        width: 90%;
+    }
+    .logout-user {
+        font-size: .9rem;
+    }
+    .logout-Button {
+        width: 22px;
+        height: 22px;
+    }
+    .banner__logo-img {
+        position: relative;
+        top: 20%;
+    }
+    /* Responsive para formularios */
+    .show-form {
+        max-width: 95%;
+    }
+    .input-field,
+    .opciones {
+        max-width: 12rem;
+    }
+    .input-field__search {
+        max-width: 12rem;
+    }
+    .input-label {
+        font-size: .8rem;
+        top: 4.8px;
+    }
+    .colum {
+        max-width: 7rem;
+    }
+    .table_60p {
+        width: 100%;
+    }
+}
+@media (max-width: 570px) {
+    /* Responsive para formularios */
+    .input-field,
+    .opciones {
+        max-width: 8rem;
+    }
+    .input-label {
+        font-size: .65rem;
+        top: 7.8px;
+    }
+    .input-field__search {
+        max-width: 12rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Estilos responsive para Menu y adaptabilidad de los 3 componentes*/
+    .menu-container {
+        width: 80%;
+    }
+    .banner__menu-hamburgesa {
+        right: 1rem;
+        left: auto;
+        z-index: 3;
+    }
+    .txt_noti {
+        font-size: .7rem;
+    }
+    .contenedor__notificaciones {
+        max-width: 50%;
+    }
+    .banner__logo-img {
+        position: relative;
+        top: 25%;
+    }
+    .logout-user {
+        font-size: .7rem;
+    }
+    .logout-Button {
+        width: 18px;
+        height: 18px;
+    }
+    .title_fuec {
+        font-size: 1.3rem;
+    }
+}
+

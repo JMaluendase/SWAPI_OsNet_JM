@@ -1,0 +1,717 @@
+:root {
+  --color-scrollbar: #ddddea; /* CMYK ~0, 0, 0, 25 */
+  --color-background-scrollbar: rgba(242, 242, 242, 1); /* CMYK ~0, 0, 0, 5 */
+  --color-background-body: rgb(52, 59, 214, 1); /* CMYK ~75, 0, 24, 16 */
+  --color-text: rgba(68, 68, 68, 1); /* CMYK ~0, 0, 0, 73 */
+  --color-accent: rgba(65, 173, 236, 1); /* CMYK ~72, 27, 0, 7 */
+  --color-accent-hover: rgba(245, 245, 245, 1); /* CMYK ~0, 0, 0, 4 */
+  --color-accent-dark: rgba(43, 180, 74, 1); /* CMYK ~76, 0, 59, 29 */
+  --color-ok:  rgba(28, 200, 138, 0.5); 
+  --color-error: rgba(255, 64, 54, 0.5); /* CMYK ~0, 75, 79, 0 */
+  --color-warning: rgba(255, 215, 0, 0.5); /* CMYK ~0, 15, 100, 0 */
+  --color-gradient-end: rgba(33, 185, 182, 1); /* CMYK ~82, 0, 2, 28 */
+  --color-background-table-header: rgba(170, 170, 170, 1); /* CMYK ~0, 0, 0, 33 */
+  --color-background-hover: rgba(245, 245, 245, 1); /* CMYK ~0, 0, 0, 4 */
+  --color-background-add: rgba(255, 255, 255, 1); /* CMYK ~0, 0, 0, 0 */
+  --color-input-border-focus: rgba(40, 167, 69, 1); /* CMYK ~76, 0, 59, 34 */
+  --color-input-border: rgba(0, 123, 255, 1); /* CMYK ~100, 52, 0, 0 */
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-color-input: rgba(107, 107, 107, 1); /* CMYK ~0, 0, 0, 58 */
+  --color-button-primary: rgba(39, 174, 96, 1); /* CMYK ~77, 0, 45, 32 */
+  --color-button-secondary: rgba(65, 173, 236, 1); /* CMYK ~72, 27, 0, 7 */
+
+
+  /* --color-scrollbar: #ebeff2;
+  --color-background-scrollbar: #eee;
+  --color-background-body: #1CC88A;
+  --color-text: #333;
+  --color-accent: #3498db;
+  --color-accent-hover: #f5f5f5;
+  --color-accent-dark: #1d8034;
+  --color-error: #FF4136;
+  --color-warning: #FFD700;
+  --color-gradient-end: #21A3A2;
+  --color-background-table-header: #A9A9A9;
+  --color-background-hover: #f0f0f0;
+  --color-background-add: #ffffff;
+  --color-input-border-focus: #28a745;
+  --color-input-border: #007BFF;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-color-input: #666;
+  --color-button-primary: #27ae60;
+  --color-button-secondary: #3498db;*/
+  --color-label-form: #f0f8ff;
+
+  --color-logo-hover: #646cffaa;
+  --color-button-hover: darkgray;
+  --color-text-item-hover: #635e5e;
+  --color-text-menu: #484141;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('fonts/SourceSansPro-Regular.otf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  overflow-y: hidden;
+  background-color: var(--color-background-body);
+  user-select: none;
+  font-size: 10px;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+}
+
+::selection {
+  background-color: var(--color-background-body);
+  color: var(--color-background-add);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+hr {
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: var(--color-accent-dark);
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: var(--color-accent-dark);
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+.menu-open .menu {
+  opacity: 0;
+}
+
+.menu-open .container {
+  width: 100%;
+}
+
+/* Estilos para el checkbox personalizado */
+.custom-checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+/* Estilo del ícono de verificación */
+.custom-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--color-background-add);
+  border: 2px solid var(--color-accent);
+  border-radius: 3px;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  content: '\2713';
+  font-size: 16px;
+  color: var(--color-accent);
+  position: absolute;
+  top: -3px;
+  left: 2px;
+}
+
+.custom-checkbox:hover .checkmark {
+  background-color: var(--color-accent-hover);
+}
+
+.submit-button {
+  background: linear-gradient(to right, var(--color-background-body), var(--color-gradient-end));
+  height: fit-content;
+  color: white;
+  border: none;
+  padding: .5rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  align-items: center;
+  box-shadow: 1px 4px 5px -2px rgba(28,200,138,0.49);
+  transition: background 5s ease-in-out, transform 0.3s ease;
+}
+
+.login_bottom {
+  padding: 0 .2rem;
+  display: flex;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, var(--color-gradient-end), var(--color-background-body));
+  transform: scale(1.023);
+}
+
+.submit-button:active {
+  background: linear-gradient(to right, var(--color-background-body), var(--color-gradient-end));
+  transform: scale(0.9);
+}
+
+.submit-button:focus {
+  outline: none;
+  border: none;
+}
+
+.opciones {
+  max-width: 14rem;
+  padding: 6px;
+  border: 1px solid var(--color-accent-dark);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: 14px;
+  text-transform: capitalize;
+  outline: none;
+}
+
+.opciones:focus {
+  border-color: var(--color-background-body);
+  box-shadow: 0px 0px 5px var(--color-background-body);
+}
+
+/* Diseño para boton desplegable con busqueda */
+.select {
+  width: 20rem;
+}
+.css-13cymwt-control {
+  border-color: var(--color-accent-dark) !important;
+}
+.css-t3ipsp-control:focus {
+  border-color: var(--color-background-body) !important;
+}
+.css-t3ipsp-control {
+  border-color: var(--color-background-body) !important;
+  box-shadow: 0 0 0 1px var(--color-background-body) !important;
+}
+.css-1jqq78o-placeholder {
+  font-size: .8rem !important;
+}
+/* Clase para Texto del desplegable */
+.css-1dimb5e-singleValue {
+  font-size: .8rem !important;
+}
+
+/*Estilos para los campos planos*/
+.campo_plano {
+  height: auto;
+  width: auto;
+}
+
+.error {
+  background-color: var(--color-error);
+}
+.warning {
+  background-color: var(--color-warning);
+}
+
+
+
+/* Estilos para las tablas */
+.select__tb {
+  outline: none;
+  border: none;
+  font-size: .7rem;
+}
+
+td input {
+  font-size: .6rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.tr {
+  padding: 0;
+  margin: 0;
+  font-size: .9rem;
+  transition: all 300ms ease-in-out;
+  height: 1.4rem !important;
+
+}
+.tr:hover {
+  background-color: var(--color-background-hover);
+}
+td {
+  height: 1rem;
+  min-height: 1rem;
+  max-height: 1rem;
+  padding: 0;
+  margin: 0;
+}
+th, td {
+  border: 1px solid var(--color-background-hover);
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+.colum {
+  width: auto;
+  max-width: 13rem;
+  padding: 0 .1rem;
+}
+
+.buttoms-sc {
+  display: flex;
+  flex-direction: row;
+  font-size: .7rem;
+  width: 5rem;
+  height: 100%;
+  border: none;
+}
+
+.buttom__red {
+  background-color: rgb(245, 96, 96) !important;
+}
+.buttom__orange {
+  background-color: lightsalmon !important;
+}
+
+.buttom {
+  padding: 0;
+  margin: 0 .1rem;
+  height: 1rem;
+  width: 3rem;
+  background-color: var(--color-background-body);
+  border-radius: .2rem;
+  border: none;
+  outline: none !important;
+  transition: all 300ms ease-in-out;
+}
+.buttom:hover {
+  transform: scale(0.9);
+}
+.buttom:active {
+  transform: scale(0.9);
+}
+
+.search {
+  width: 15rem;
+  margin-bottom: .5rem;
+}
+
+.container__table {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  transition: all 300ms ease-in-out;
+}
+
+.filas__container {
+  border-collapse: collapse;
+  margin: 0 auto;
+  max-width: 100%;
+  min-width: 100%;
+  /* transition: all 300ms ease-in-out;
+  width: calc(100% - 3rem); */
+}
+
+.title__campos {
+  font-size: 1rem;
+  background-color: var(--color-background-table-header);
+}
+
+
+.campo__input {
+  width: 100%;
+  text-align: center;
+  font-size: .9rem;
+}
+
+/* Estilos para paginacion de la tabla */
+.paginacion_table {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .2rem;
+}
+
+.li_paginacion {
+  list-style: none;
+}
+
+.button_paginacion {
+  background-color: var(--color-background-table-header);
+  transition: all 300ms ease-in-out;
+}
+.button_paginacion:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para el input de busqueda */
+.search {
+  width: 15rem !important;
+  margin-bottom: .5rem !important;
+}
+
+.fijo {
+  width: 5rem;
+  background-color: var(--color-background-add);
+  border: none;
+}
+
+/* Estilos para botones de agregar usuarios o eliminar */
+.agregar {
+  display: flex;
+  /* position: fixed; */
+  bottom: 1rem;
+  padding: 0;
+  outline: none;
+  border: none;
+  margin: 0 .3rem;
+  align-items: center;
+  outline: none;
+  transition: all 300ms ease-in-out;
+}
+
+.agregar:hover {
+  transform: scale(1.1);
+}
+.agregar:active,
+.agregar:focus {
+  outline: none;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 65px;
+  aspect-ratio: 1;
+  position: sticky;
+  /* background-color: var(--color-background-body); */
+  /* margin: 0 auto;
+  margin-top: 2rem; */
+  bottom: 1rem;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px inset #fff;
+  animation: l5 2.5s infinite;
+  background-color: var(--color-background-body);
+}
+.loader:after {
+  animation-delay: -1.25s;
+  border-radius: 0;
+}
+@keyframes l5{
+  0%    {inset:0    35px 35px 0   }
+  12.5% {inset:0    35px 0    0   }
+  25%   {inset:35px 35px 0    0   }
+  37.5% {inset:35px 0    0    0   }
+  50%   {inset:35px 0    0    35px}
+  62.5% {inset:0    0    0    35px}
+  75%   {inset:0    0    35px 35px}
+  87.5% {inset:0    0    35px 0   }
+  100%  {inset:0    35px 35px 0   }
+}
+
+/* Estilos DatePicker(Calendario) */
+/* Estilos para parte superior de calendario */
+.react-datepicker__header {
+  background-color: var(--color-ok) !important;
+  border-bottom: none !important;
+}
+
+.react-datepicker__navigation {
+  height: 27px !important;
+  width: 29px !important;
+}
+.react-datepicker__navigation:focus {
+  outline: 4px auto var(--color-background-body) !important;
+}
+.react-datepicker__navigation-icon {
+  font-size: 20px !important;
+}
+
+/* Estilos para el DatePicker general */
+.react-datepicker {
+  border: 2px solid var(--color-ok) !important;
+  border-radius: .5rem !important;
+}
+/* Estilos para dropdown de mes y año */
+.react-datepicker__month-select,
+.react-datepicker__year-select {
+  padding: .2rem;
+  border-radius: .3rem;
+  text-transform: capitalize;
+  background-color: var(--color-background-add);
+  border: 1px solid var(--color-accent-dark);
+}
+
+/* Estilos para titulo mes del calendario */
+.react-datepicker__current-month {
+  text-transform: capitalize;
+}
+
+/* Estilos para abreviaciones de dias de la semana */
+.react-datepicker__day-names {
+  background-color: var(--color-ok);
+  text-transform: capitalize;
+}
+
+.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
+  background-color: var(--color-ok) !important;
+}
+
+/* Estilos para botones de next month */
+.react-datepicker__navigation-icon::before {
+  border-color: var(--color-accent-dark) !important;
+}
+
+/* Estilos para dia actual */
+.react-datepicker__day--today {
+  color: var(--color-accent-dark) !important;
+  font-weight: bolder !important;
+  transition: all 300ms ease-in-out;
+}
+.react-datepicker__day--today:hover {
+  color: var(--color-background-add) !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--color-button-primary) !important;
+  color: var(--color-background-add) !important;
+}
+
+/* Estilos para rango de fecha seleccionado */
+.react-datepicker__day--in-range {
+  background-color: var(--color-button-primary) !important;
+  color: white !important;
+}
+
+/* .react-datepicker-popper[data-placement^=bottom], */
+.react-datepicker__triangle::before {
+  border-bottom-color: var(--color-ok) !important;
+}
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after {
+  border-bottom-color: transparent !important;
+}
+
+/* Estilos para cuando sea solo una fecha */
+.react-datepicker__day--keyboard-selected {
+  border-radius: 0.3rem !important;
+  font-weight: bolder !important;
+  background-color: var(--color-button-primary) !important;
+  color: white !important;
+}
+.react-datepicker__day--keyboard-selected:hover {
+  background-color: var(--color-accent-dark) !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: var(--color-ok) !important;
+  /* color: var(--color-background-add) !important; */
+  border-radius: 0.3rem;
+  background-color: var(--color-background-body);
+  opacity: 0.7;
+  /* color: black; */
+  font-weight: bolder;
+}
+
+.icon_calendar {
+  position: relative;
+  background-image: url(./img/icons_inputs/calendario3.png);
+  background-repeat: no-repeat;
+  background-position: 100% center;
+  background-origin: content-box;
+}
+/* .icon_bussines {
+  position: relative;
+  background-image: url(./img/icons_inputs/calendario3.png);
+  background-repeat: no-repeat;
+  background-position: 100% center;
+  background-origin: content-box;
+} */
+
+.icon_input_bus {
+  background-image: url(./img/icons_inputs/bus1.png);
+}
+.icon_input_dni {
+  background-image: url(./img/icons_inputs/dni.png);
+}
+
+.icon_input_bus, .icon_input_dni {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 100% center;
+  background-origin: content-box;
+}
+
+.forms__box {
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+  margin: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 0px 5px 5px var(--color-shadow);
+}
+.options__box {
+  border-radius: .3rem;
+  padding: 1rem 1rem;
+  margin: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 0px 5px 5px var(--color-shadow);
+}
+.results__box {
+  border-radius: .4rem;
+  padding: 1.5rem 2rem;
+  margin: 1rem auto;
+  box-shadow: 0 2px 5px var(--color-shadow);
+}
+.forms__box, .results__box {
+  width: max-content;
+  max-width: 80%;
+  border: 1px solid var(--color-background-table-header);
+  transition: all 300ms ease-in-out;
+}
+.results__box:hover {
+  box-shadow: 0 5px 5px var(--color-shadow);
+}
+
+.box__sheet {
+  width: fit-content;
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+.buttons_left {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  /* left: 1rem; */
+  bottom: 2rem;
+  gap: 1rem;
+}
+
+.container__buttons_left {
+  height: 40px;
+  width: 40px;
+  background-color: var(--color-scrollbar);
+  border-radius: 0.3rem;
+  transition: all 300ms ease-in-out, transform 30ms ease-in-out;
+}
+.container__buttons_left:active {
+  transform: scale(0.8);
+}
+.imprimir {
+  background-image: url(./img/icons_buttons/imprimir.png);
+}
+.descargar-pdf {
+  background-image: url(./img/icons_buttons/descargar-pdf.png);
+}
+.descargar-xlsx {
+  background-image: url(./img/icons_buttons/xlsx.png);
+}
+
+.imprimir,
+.descargar-pdf,
+.descargar-xlsx {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 32px;
+  width: 32px;
+  margin: auto;
+  top: 3px;
+}
+
+/* .container__buttons_left:hover {
+  scale: 1.1;
+} */
+
+.buttons_left-label {
+  background-color: var(--color-accent);
+  position: relative;
+  right: calc(0% - 0.28rem);
+  top: .2rem;
+  height: fit-content;
+  width: 6rem;
+  padding: .3rem;
+  font-size: .8rem;
+  border-radius: 0 .3rem .3rem 0;
+  z-index: -1;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+
+.container__buttons_left:hover .buttons_left-label {
+/* .container__buttons_left .buttons_left-label { */
+  /* display: block; */
+  transform: translateX(2rem);
+  opacity: 1;
+}
+
+.gap2_nw {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.container-initial {
+  margin: -45rem;
+  transition: all 1s ease-in-out;
+}
+
+.container-final {
+  transition: all 500ms ease-in-out;
+}
