@@ -131,7 +131,6 @@
     .banner {
         width: 69%;
     }
-    /* .container { OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
     .container {
         width: 100%;
     }
@@ -163,11 +162,7 @@
 @media (max-width: 760px) {
     /* Estilos responsive para Menu y adaptabilidad de los 3 componentes*/
     .banner {
-        width: 68%;
-    }
-    .title_fuec {
-        display: flex;
-        justify-content: flex-end;
+        width: 57%;
     }
 }
 @media (max-width: 720px) {
@@ -175,11 +170,11 @@
     .menu-container {
         width: 17rem;
     }
-    .banner__menu-hamburgesa {
+    .banner__menu-hamburger {
         left: 19rem;
         scale: 1.4;
     }
-    .menu-open .banner__menu-hamburgesa {
+    .menu-open .banner__menu-hamburger {
         left: 1.7rem;
         top: 1rem;
         scale: 1.4;
@@ -203,49 +198,16 @@
         position: relative;
         top: 20%;
     }
-    /* Responsive para formularios */
-    .show-form {
-        max-width: 95%;
-    }
-    .input-field,
-    .opciones {
-        max-width: 12rem;
-    }
-    .input-field__search {
-        max-width: 12rem;
-    }
-    .input-label {
-        font-size: .8rem;
-        top: 4.8px;
-    }
-    .colum {
-        max-width: 7rem;
-    }
-    .table_60p {
-        width: 100%;
-    }
+
 }
-@media (max-width: 570px) {
-    /* Responsive para formularios */
-    .input-field,
-    .opciones {
-        max-width: 8rem;
-    }
-    .input-label {
-        font-size: .65rem;
-        top: 7.8px;
-    }
-    .input-field__search {
-        max-width: 12rem;
-    }
-}
+
 
 @media (max-width: 480px) {
     /* Estilos responsive para Menu y adaptabilidad de los 3 componentes*/
     .menu-container {
         width: 80%;
     }
-    .banner__menu-hamburgesa {
+    .banner__menu-hamburger {
         right: 1rem;
         left: auto;
         z-index: 3;
@@ -266,9 +228,6 @@
     .logout-Button {
         width: 18px;
         height: 18px;
-    }
-    .title_fuec {
-        font-size: 1.3rem;
     }
 }
 

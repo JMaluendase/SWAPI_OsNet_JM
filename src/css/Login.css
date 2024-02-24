@@ -87,6 +87,9 @@
   .logos-figure {
     display: flex;
     justify-content: space-around;
+    color: var(--color-color-input);
+    font-size: 1rem;
+    font-family: cursive;
   }
   
   .logo-empresas {

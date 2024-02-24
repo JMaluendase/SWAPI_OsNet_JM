@@ -145,7 +145,7 @@ const LoginForm: React.FC<Props> = ({
           <div className="container-content"></div>
           <section className="container-logos">
             <figure className="logos-figure">
-              {/* Logos */}
+              Jorge Eliecer Maluendas Bautista
             </figure>
           </section>
         </section>
