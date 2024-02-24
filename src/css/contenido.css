@@ -225,6 +225,7 @@
   position: fixed;
   max-width: 20rem;
   right: 1rem;
+  top: 4rem;
   background-color: var(--color-accent);
 }
 
