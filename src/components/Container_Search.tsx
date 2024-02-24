@@ -10,7 +10,7 @@ interface InicioProps {
   mostrarMensaje: (message: string, type: string) => void;
 }
 
-const Inicio: React.FC<InicioProps> = () => {
+const Inicio: React.FC<InicioProps> = ({mostrarMensaje}) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [text, setText] = useState<string>("");
   const [results, setResults] = useState<any[]>([]);
@@ -45,7 +45,7 @@ const Inicio: React.FC<InicioProps> = () => {
   
 
   const handleItemClick = (url: string) => {
-    console.log(url);
+    mostrarMensaje(url, 'warning_notification')
   };
 
   return (

@@ -14,7 +14,7 @@ const Contenido: React.FC<{ url: string }> = ({ url }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [nextPage, setNextPage] = useState<string | null>(null);
   const [prevPage, setPrevPage] = useState<string | null>(null);
-  const [selectedItemInfo, setSelectedItemInfo] = useState<GenericObject | null>(null); // Nuevo estado para el item seleccionado
+  const [selectedItemInfo, setSelectedItemInfo] = useState<GenericObject | null>(null);
 
   useEffect(() => {
     fetchData(url);
@@ -30,12 +30,9 @@ const Contenido: React.FC<{ url: string }> = ({ url }) => {
         setNextPage(response.data.next);
         setPrevPage(response.data.previous);
       } else {
-        console.error("No hay array de results:", response.data.results);
       }
       setIsLoading(false);
-    } catch (error) {
-      console.error("Error llamando la data:", error);
-    }
+    } catch {}
   };
 
   const processItems = async (items: GenericObject[]) => {
@@ -63,8 +60,7 @@ const Contenido: React.FC<{ url: string }> = ({ url }) => {
         try {
           const response = await axios.get(url);
           return { name: response.data.name || response.data.title || "Unknown", url: url };
-        } catch (error) {
-          console.error(`Error llamando la url: ${url}`, error);
+        } catch {
           return { name: "Unknown", url: url };
         }
       })
@@ -76,8 +72,7 @@ const Contenido: React.FC<{ url: string }> = ({ url }) => {
     try {
       const response = await axios.get(url);
       return { name: response.data.name || response.data.title || "Unknown", url: url };
-    } catch (error) {
-      console.error("Error llamando name de la url:", error);
+    } catch {
       return { name: "Unknown", url: url };
     }
   };
@@ -86,10 +81,8 @@ const Contenido: React.FC<{ url: string }> = ({ url }) => {
     if (url) {
       try {
         const response = await axios.get(url);
-        setSelectedItemInfo(response.data); // Almacenar la información del item seleccionado en el estado
-      } catch (error) {
-        console.error("Error fetching additional info:", error);
-      }
+        setSelectedItemInfo(response.data);
+      } catch {}
     }
   };
 

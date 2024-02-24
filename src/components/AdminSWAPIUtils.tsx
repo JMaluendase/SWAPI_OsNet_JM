@@ -10,11 +10,9 @@ export const fetchData = async (url: string) => {
     if (Array.isArray(response.data.results)) {
       return response.data.results;
     } else {
-      console.error("No hay array de results:", response.data.results);
       return [];
     }
-  } catch (error) {
-    console.error("Error llamando la data:", error);
+  } catch {
     return [];
   }
 };
@@ -22,11 +20,8 @@ export const fetchData = async (url: string) => {
 export const processItems = async (items: GenericObject[]) => {
   const processedItems = await Promise.all(
     items.map(async (item) => {
-      console.log(item);
       const processedItem: GenericObject = {};
       for (const [key, value] of Object.entries(item)) {
-        console.log(value);
-        // Verifica si el valor es diferente de null, undefined o un array vacío
         if (value !== null && value !== undefined && !(Array.isArray(value) && value.length === 0)) {
           if (
             Array.isArray(value) &&
@@ -45,7 +40,7 @@ export const processItems = async (items: GenericObject[]) => {
     })
   );
 
-  // Filtra los objetos procesados para eliminar aquellos que estén vacíos
+  // Filtra los objetos procesados para eliminar los vacios
   const filteredItems = processedItems.filter(item => Object.keys(item).length > 0);
 
   return filteredItems;
@@ -64,7 +59,6 @@ export const fetchNamesFromUrls = async (urls: string[]) => {
           url: url,
         };
       } catch (error) {
-        console.error(`Error llamando la url: ${url}`, error);
         return { name: "Unknown", url: url };
       }
     })
@@ -79,8 +73,7 @@ export const fetchNameFromUrl = async (url: string) => {
       name: response.data.name || response.data.title || "Unknown",
       url: url,
     };
-  } catch (error) {
-    console.error("Error llamando name de la url:", error);
+  } catch {
     return { name: "Unknown", url: url };
   }
 };
