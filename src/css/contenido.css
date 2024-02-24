@@ -314,5 +314,5 @@
 }
 
 .clickable {
-  color: var(--color-accent);
+  color: var(--color-input-border);
 }
