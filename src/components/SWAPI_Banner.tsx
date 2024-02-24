@@ -35,14 +35,12 @@ const Banner: React.FC<BannerProps> = ({
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       ></div>
       <nav className="banner__nav">
-        <a
+        <figure
           className="banner__logo"
-          target="_blank"
-          href="https://www.berlinasdelfonce.com/"
         >
           <figure className="banner__logo-img"></figure>
-        </a>
-        <div className="banner__title" onClick={() => toggleSubMenu("Home")}>
+        </figure>
+        <div className="banner__title">
           <h2 className="banner__title-app">Star WarsApp</h2>
         </div>
         <section className="banner__logout">
